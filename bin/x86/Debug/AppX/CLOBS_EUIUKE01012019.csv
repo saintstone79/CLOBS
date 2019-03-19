@@ -1,0 +1,28 @@
+OBSERVATION LOGS:
+Log Index,Log Started,Event Time,Classroom Activity,Event Type,Event Detail
+0,14:21:54,00:00:00,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,6.Directions/Materials,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:03,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:03,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:03,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,6.Directions/Materials,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:05,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:05,3.Engineering/STEM Content,STOMPER1,TalkingToIndividual
+1,00:00:00,00:00:06,3.Engineering/STEM Content,STOMPER1,TalkingToClass
+1,00:00:00,00:00:06,3.Engineering/STEM Content,STOMPER2,TalkingToClass
+1,00:00:00,00:00:06,3.Engineering/STEM Content,STOMPER2,TalkingToIndividual
+1,00:00:00,00:00:07,3.Engineering/STEM Content,STOMPER2,TalkingToIndividual
+1,00:00:00,00:00:07,3.Engineering/STEM Content,STOMPER2,Observing
+1,00:00:00,00:00:07,3.Engineering/STEM Content,STOMPER2,Observing
+1,00:00:00,00:00:07,3.Engineering/STEM Content,STOMPER1,Observing
+1,00:00:00,00:00:07,3.Engineering/STEM Content,STOMPER1,Observing
+1,00:00:00,00:00:08,3.Engineering/STEM Content,STOMPER1,HandingOutMaterial
+1,00:00:00,00:00:08,3.Engineering/STEM Content,STOMPER2,HandingOutMaterial
+1,00:00:00,00:00:08,3.Engineering/STEM Content,STOMPER2,HandingOutMaterial
+1,00:00:00,00:00:10,3.Engineering/STEM Content,LogTimeOutNote,

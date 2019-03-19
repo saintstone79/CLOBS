@@ -1,0 +1,6 @@
+MainPackage=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\ARM\Release\CLOBS2_1.3.25.0_ARM.appx
+SymbolPackage=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\AppPackages\CLOBS2_1.3.25.0_Test\CLOBS2_1.3.25.0_ARM.appxsym
+ResourcePack=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\ARM\Release\CLOBS2_1.3.25.0_scale-100.appx
+ResourcePack=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\ARM\Release\CLOBS2_1.3.25.0_scale-125.appx
+ResourcePack=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\ARM\Release\CLOBS2_1.3.25.0_scale-150.appx
+ResourcePack=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\ARM\Release\CLOBS2_1.3.25.0_scale-400.appx

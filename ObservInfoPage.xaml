@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="CLOBS2.ObservInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CLOBS2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White" HorizontalAlignment="Center">
+        <StackPanel Margin="0, 5, 0, 0">
+            <TextBlock x:Name="TOP_TITLE"  Text="Enter observation information"
+                   FontSize="24" Margin="0,26,0,8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <StackPanel x:Name="DATE_TIME" Orientation="Horizontal" RelativePanel.Below="TOP_TITLE">
+                <DatePicker x:Name="ObservationDate" Header="OBSERVATION DATE" RelativePanel.Below="TOP_TITLE" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="VideoSync" Text="00:00:00" TextAlignment="Right" Header= "VIDEO SYNC (Enter Video start time)" Margin="10,0,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="TimeMinutesOrSeconds"/>
+            </StackPanel>
+            <StackPanel x:Name="TimeInfo" Margin="0, 0, 0, 0" RelativePanel.Below="DATE_TIME">
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="ObservationTime" Header="OBSERVATION DURATION" Margin="0, 12, 0, 0" Width="300" SelectedIndex="1">
+                        <x:String>0:30</x:String>
+                        <x:String>1:00</x:String>
+                        <x:String>1:30</x:String>
+                        <x:String>2:00</x:String>
+                        <x:String>2:30</x:String>
+                        <x:String>3:00</x:String>
+                    </ComboBox>
+                    <ComboBox x:Name="GapTime" Header="GAP DURATION" Margin="10, 12, 0, 0" Width="300" SelectedIndex="3">
+                        <x:String>0:30</x:String>
+                        <x:String>1:00</x:String>
+                        <x:String>1:30</x:String>
+                        <x:String>2:00</x:String>
+                        <x:String>2:30</x:String>
+                        <x:String>3:00</x:String>
+                    </ComboBox>
+                    <CheckBox x:Name="NoGapTime" Content="NO GAP TIME" VerticalAlignment="Bottom" Margin="10, 0, 0, 0" Checked="NoGapTime_Checked" Unchecked="NoGapTime_Unchecked" IsEnabled="True"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="ObserverInfo" RelativePanel.Below="TimeInfo"  Orientation="Horizontal">
+                <TextBox x:Name="ObserverName" Header= "OBSERVER NAME" Margin="0,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                <TextBox x:Name="SchoolName" Header= "SCHOOL NAME" Margin="10,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                <TextBox x:Name="TeacherName" Header= "TEACHER NAME" Margin="10,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+            </StackPanel>
+            <StackPanel x:Name="STOMPERInfo" RelativePanel.Below="ObserverInfo">
+                <ComboBox x:Name="StomperNo" SelectionChanged="StomperNo_SelectionChanged" Header="Number of STOMPers" Margin="0, 12, 0, 0" Width="300">
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                </ComboBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="STOMPER1" Header= "STOMPER1 NAME" Margin="0,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                    <TextBox x:Name="STOMPER2" Header= "STOMPER2 NAME" Margin="10,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                    <TextBox x:Name="STOMPER3" Header= "STOMPER3 NAME" Margin="10,12,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                </StackPanel>
+            </StackPanel>
+            <TextBox x:Name="ObservationNote" Header="OBSERVATION NOTE" Margin="0,12,0,0" MaxLength="320" Width="Auto" Height="100" RelativePanel.Below="STOMPERInfo" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="Start" Click="Start_Click" HorizontalAlignment="Center" Margin="0, 12, 0, 0" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" >
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB5;" Margin="0,0,5,0"/>
+                        <TextBlock>Start observation</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Name="Exit" Click="Exit_Click" HorizontalAlignment="Center" Margin="20, 12, 0, 0" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEF2C;" Margin="0,0,5,0"/>
+                        <TextBlock>Cancel observation</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <TextBlock x:Name="ErrorMessage" Text="" Foreground="#FFFD0A0A" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,226 @@
+﻿<Page
+    x:Class="CLOBS2.ObservationSummaryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CLOBS2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White" HorizontalAlignment="Center" Width="1000" BorderBrush="DarkGray" BorderThickness="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Name="TitleTXT" Text="Observation summary" FontSize="32" Margin="0, 10, 0, 30" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="1">
+            <RelativePanel>
+                <TextBlock Name="ObservationStartedTxt" Text="Observation started: " Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.AlignLeftWithPanel="True"/>
+                <TextBlock Name="ObservationStarted" Text="TIME_STARTED" Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.RightOf="ObservationStartedTxt"/>
+                <TextBlock Name="ObservationEnededText" Text="Observation ended: " Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.LeftOf="ObservationEnded"/>
+                <TextBlock Name="ObservationEnded" Text="TIME_ENDED" Margin="5, 0, 5, 0" FontSize="18"
+                           RelativePanel.AlignRightWithPanel="True"/>
+            </RelativePanel>
+            <RelativePanel>
+                <TextBlock Name="TotalLogCountTxt" Text="Total log counts: " Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.AlignLeftWithPanel="True"/>
+                <TextBlock Name="TotalLogCount" Text="TOTAL_LOG_NO" Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.RightOf="TotalLogCountTxt"/>
+                <TextBlock Name="TotalEventCountTxt" Text="Total event counts: " Margin="5, 0, 0, 0" FontSize="18"
+                           RelativePanel.LeftOf="TotalEventCount"/>
+                <TextBlock Name="TotalEventCount" Text="TOTAL_EVENT_NO" Margin="5, 0, 5, 0" FontSize="18"
+                           RelativePanel.AlignRightWithPanel="True"/>
+            </RelativePanel>
+            <StackPanel Height="170" HorizontalAlignment="Center">
+                <Charting:Chart  
+            x:Name="PieChart"  
+            HorizontalAlignment="Left"  
+            VerticalAlignment="Top"  
+            Margin="5, 0, 5, 0">
+                    <Charting:PieSeries Margin="0"  
+            IndependentValuePath="EventName"  
+            DependentValuePath="Count" CharacterSpacing="5" 
+            IsSelectionEnabled="True" Title="Activity" FontFamily="Segoe UI"/>
+                </Charting:Chart>
+            </StackPanel>
+            <StackPanel Visibility="Collapsed">
+                <TextBlock Text="Classroom activities" Margin="5, 10, 0, 0" FontSize="18"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="1.Classroom management: " Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="ClassroomManagementCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Text="2.Intro to design task:" Margin="30, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="IntroDesignTaskCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Text="3.Engineering/STEM content:" Margin="162, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="EngineeringSTEMContentCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="4.Hands-on activity: " Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="HandsOnActivityCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Text="5.Group discussion/Q&#38;A/Share results:" Margin="82, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="GroupDisscussionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Text="6.Directions/Materials:" Margin="20, 0, 0, 0" FontSize="18"/>
+                    <TextBlock Name="DirectionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                </StackPanel>
+            </StackPanel>
+            <Grid Margin="0, 10, 0, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" BorderThickness="1" Margin="5, 0, 5, 0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="STOMPER1" FontSize="18" Margin="5, 0, 0, 0" />
+                        <TextBlock Name="ST1Name" Text="STOMPER1_NAME" Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Text="total event:" Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Name="ST1EventCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Visibility="Collapsed">
+                        <Charting:Chart  
+                            x:Name="ST1BarChart"  
+                            HorizontalAlignment="Left"  
+                            VerticalAlignment="Top"  
+                            Margin="5, 0, 5, 0" Width="500" Height="300">
+                            <Charting:BarSeries Margin="0"  
+                                IndependentValuePath="EventName"  
+                                DependentValuePath="Count" CharacterSpacing="5" 
+                                IsSelectionEnabled="True" FontSize="12" FontStretch="SemiCondensed" FontFamily="Segoe UI"/>
+                        </Charting:Chart>
+                    </StackPanel>
+                    <StackPanel Visibility="Visible">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ST1TalkToClassTxt" Text="-Talk to class:" Margin="5, 0, 0, 0" FontSize="18"/>
+                            <TextBlock Name="ST1TalkToClassCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ST1TalkToIndividualTxt" Text="-Talk to individual:" Margin="5, 0, 5, 0" FontSize="18"/>
+                            <TextBlock Name="ST1TalkIndividualCt" Text="00" Margin="5, 0, 5, 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ST1ObservingTxt" Text="-Observing:"  FontSize="18" Margin="5, 0, 0, 0"/>
+                            <TextBlock Name="ST1ObservingCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="ST1HandingOutTxt" Text="-Handing out materials:" Margin="5, 0, 5, 0" FontSize="18"/>
+                            <TextBlock Name="ST1HandingOutCt" Text="00" Margin="5, 0, 5, 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="-Answering question:" Margin="5, 0, 0, 0" FontSize="18"/>
+                            <TextBlock Name="ST1AnsweringQuestionCt" Text="00" FontSize="18" Margin="5, 0, 0, 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" BorderThickness="1" Margin="5, 0, 5, 0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="STOMPER1" HorizontalAlignment="Center" Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Name="ST2Name" Text="STOMPER2_NAME" Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Text="total event:" FontSize="18" Width="85" Margin="5,0,0,0"/>
+                        <TextBlock Name="ST2EventCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ST2TalkToClassTxt" Text="-Talk to class:"  FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="ST2TalkToClassCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ST2TalkToIndividualTxt" Text="-Talk to individual:"  Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Name="ST2TalkIndividualCt" Text="00" Margin="5, 0, 5, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ST2ObservingTxt" Text="-Observing:"  FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="ST2ObservingCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ST2HandingOutTxt" Text="-Handing out materials:" Margin="5, 0, 5, 0" FontSize="18"/>
+                        <TextBlock Name="ST2HandingOutCt" Text="00" Margin="5, 0, 5, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Answering question:" Margin="5, 0, 0, 0" FontSize="18"/>
+                        <TextBlock Name="ST2AnsweringQuestionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0, 10, 0, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" BorderThickness="1" Margin="5, 0, 5, 0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Total intervention counts:"  FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InterventionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Trading card:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InterventionTradingCardCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Videos (Bios about STOMPers):" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InterventionVideosBiosCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Engineering-related article/video:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InterventionEngineeringRelatedArticleCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Class work examples:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InterventionClassWorkExampleCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="1" BorderThickness="1" Margin="5, 0, 5, 0" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Total interaction counts:"  FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Engineering connection:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionEngConnectionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Real-World connection:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionRealConnectionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Personal engineering experience:" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionEngExperienceCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Engineering passions (emotions, enthusiasm):" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionEngPassionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="-Personal connections (interests, hobbies):" FontSize="18" Margin="5, 0, 0, 0"/>
+                        <TextBlock Name="InteractionPersonalConnectionCt" Text="00" Margin="5, 0, 0, 0" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <TextBox x:Name="ObservationNote" Header="OBSERVATION NOTE" MaxLength="320" Width="Auto" Height="100" RelativePanel.Below="StomperInfo" Margin="5,10,5,5"  FontSize="18"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Observation log file saved on " Margin="5, 0, 0, 0" FontSize="18"/>
+                <TextBlock Name="ObservationLogLocation" Text="LOG_FILE_LOCATION" Margin="5, 0, 0, 0" TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock Text="Observation note file saved on " Margin="5, 0, 0, 0" FontSize="18"/>
+                <TextBlock Name="ObservationNoteLocation" Text="NOTE_FILE_LOCATION" Margin="5, 0, 0, 0" TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Visibility="Collapsed" Name="OpenFileFolder" HorizontalAlignment="Left" FontSize="18" Margin="5, 0, 0, 0" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" Click="OpenFileFolder_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE838;" Margin="0,0,5,0"/>
+                        <TextBlock>Open Folder</TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="2" Name="Exit" HorizontalAlignment="Center" FontSize="18" Margin="20, 12, 0, 0" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" Click="Exit_Click">
+            <StackPanel Orientation="Horizontal">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;" Margin="0,0,5,0"/>
+                <TextBlock>Close &#38; Open Folder</TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>

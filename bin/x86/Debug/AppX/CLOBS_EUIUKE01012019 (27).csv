@@ -1,0 +1,16 @@
+OBSERVATION LOGS:
+Log Index,Log Started,Event Time,Classroom Activity,Event Type,Event Detail
+0,16:59:01,00:00:02,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:02,00:00:04,1.Classroom Management,STOMPER1,TalkingToIndividual
+1,00:00:02,00:00:05,1.Classroom Management,STOMPER1,TalkingToClass
+1,00:00:02,00:00:05,1.Classroom Management,STOMPER2,Observing
+1,00:00:02,00:00:05,1.Classroom Management,STOMPER2,TalkingToIndividual
+1,00:00:02,00:00:06,1.Classroom Management,STOMPER2,TalkingToClass
+1,00:00:02,00:00:06,1.Classroom Management,STOMPER1,HandingOutMaterial
+1,00:00:02,00:00:07,1.Classroom Management,STOMPER1,Observing
+1,00:00:02,00:00:07,1.Classroom Management,STOMPER1,AsweringQuestion
+1,00:00:02,00:00:09,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:02,00:00:12,3.Engineering/STEM Content,LogTimeOutNote,
+2,00:00:22,00:00:29,4.Hands-on Activity,ClassroomActivityChanged,NoData
+2,00:00:22,00:00:32,4.Hands-on Activity,LogTimeOutNote,
+3,00:00:42,00:00:52,4.Hands-on Activity,LogTimeOutNote,

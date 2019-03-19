@@ -1,0 +1,12 @@
+OBSERVATION LOGS:
+Log Index,Log Started,Event Time,Classroom Activity,Event Type,Event Detail
+0,16:57:02,00:00:00,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:00,4.Hands-on Activity,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,4.Hands-on Activity,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:10,4.Hands-on Activity,LogTimeOutNote,
+2,00:00:20,00:00:30,4.Hands-on Activity,LogTimeOutNote,
+3,00:00:40,00:00:50,4.Hands-on Activity,LogTimeOutNote,
+4,00:01:00,00:01:10,4.Hands-on Activity,LogTimeOutNote,

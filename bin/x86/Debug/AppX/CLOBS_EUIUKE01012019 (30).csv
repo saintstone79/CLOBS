@@ -1,0 +1,37 @@
+OBSERVATION LOGS:
+Log Index,Log Started,Event Time,Classroom Activity,Event Type,Event Detail
+0,19:48:02,00:00:00,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,1.Classroom Management,STOMPER1,Observing
+1,00:00:00,00:00:05,1.Classroom Management,STOMPER1,HandingOutMaterial
+1,00:00:00,00:00:06,1.Classroom Management,STOMPER2,TalkingToClass
+1,00:00:00,00:00:06,1.Classroom Management,STOMPER2,TalkingToIndividual
+1,00:00:00,00:00:07,1.Classroom Management,STOMPER2,HandingOutMaterial
+1,00:00:00,00:00:08,1.Classroom Management,STOMPER1,Observing
+1,00:00:00,00:00:08,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:10,2.Intro Design Task,LogTimeOutNote,
+2,00:00:20,00:00:24,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+2,00:00:20,00:00:24,3.Engineering/STEM Content,STOMPER1,HandingOutMaterial
+2,00:00:20,00:00:25,3.Engineering/STEM Content,STOMPER1,HandingOutMaterial
+2,00:00:20,00:00:25,3.Engineering/STEM Content,STOMPER1,HandingOutMaterial
+2,00:00:20,00:00:25,3.Engineering/STEM Content,STOMPER1,AsweringQuestion
+2,00:00:20,00:00:25,3.Engineering/STEM Content,STOMPER1,AsweringQuestion
+2,00:00:20,00:00:26,3.Engineering/STEM Content,Intervention,TradingCard
+2,00:00:20,00:00:26,3.Engineering/STEM Content,Intervention,TradingCard
+2,00:00:20,00:00:26,3.Engineering/STEM Content,Intervention,EngineeringRelatedArticles
+2,00:00:20,00:00:27,6.Directions/Materials,ClassroomActivityChanged,NoData
+2,00:00:20,00:00:27,6.Directions/Materials,Interaction,RealWorldConnection
+2,00:00:20,00:00:28,6.Directions/Materials,Interaction,RealWorldConnection
+2,00:00:20,00:00:30,6.Directions/Materials,LogTimeOutNote,
+3,00:00:40,00:00:43,6.Directions/Materials,Intervention,ClassWorkExamples
+3,00:00:40,00:00:43,6.Directions/Materials,Interaction,PersonalEngineeringExperience
+3,00:00:40,00:00:43,6.Directions/Materials,Interaction,PersonalEngineeringExperience
+3,00:00:40,00:00:50,6.Directions/Materials,LogTimeOutNote,
+4,00:01:00,00:01:03,6.Directions/Materials,Intervention,ShareBioVideo
+4,00:01:00,00:01:03,6.Directions/Materials,Intervention,ShareBioVideo
+4,00:01:00,00:01:04,6.Directions/Materials,STOMPER1,AsweringQuestion
+4,00:01:00,00:01:04,6.Directions/Materials,STOMPER1,AsweringQuestion
+4,00:01:00,00:01:04,6.Directions/Materials,STOMPER1,Observing
+4,00:01:00,00:01:04,6.Directions/Materials,STOMPER1,Observing
+4,00:01:00,00:01:05,6.Directions/Materials,STOMPER2,Observing
+4,00:01:00,00:01:10,6.Directions/Materials,LogTimeOutNote,
+5,00:01:20,00:01:30,6.Directions/Materials,LogTimeOutNote,

@@ -1,0 +1,25 @@
+OBSERVATION LOGS:
+Log Index,Log Started,Event Time,Classroom Activity,Event Type,Event Detail
+0,14:27:30,00:00:00,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:00,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,4.Hands-on Activity,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:01,6.Directions/Materials,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:02,1.Classroom Management,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:03,2.Intro Design Task,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:03,3.Engineering/STEM Content,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,4.Hands-on Activity,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:04,5.Group Discussion/Q&A/Share Results,ClassroomActivityChanged,NoData
+1,00:00:00,00:00:10,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+2,00:00:20,00:00:30,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+3,00:00:40,00:00:50,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+4,00:01:00,00:01:10,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+5,00:01:20,00:01:30,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+6,00:01:40,00:01:50,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+7,00:02:00,00:02:10,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+8,00:02:20,00:02:30,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+9,00:02:40,00:02:50,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+10,00:03:00,00:03:10,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
+11,00:03:20,00:03:30,5.Group Discussion/Q&A/Share Results,LogTimeOutNote,
