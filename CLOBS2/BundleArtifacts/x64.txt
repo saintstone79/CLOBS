@@ -1,2 +1,0 @@
-MainPackage=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\bin\x64\Release\CLOBS2_1.3.25.0_x64.appx
-SymbolPackage=C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\AppPackages\CLOBS2_1.3.25.0_Test\CLOBS2_1.3.25.0_x64.appxsym
