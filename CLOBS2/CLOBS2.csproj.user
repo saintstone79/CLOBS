@@ -4,7 +4,7 @@
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
-    <PackageOptionalProjectsInIdeBuilds>True</PackageOptionalProjectsInIdeBuilds>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
     <Source>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</Source>
     <SmallTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</SmallTileSource>
     <MediumTileSource>C:\Users\Euisuk\Source\Repos\Github\CLOBS\CLOBS2\Resources\Medium logo.ai</MediumTileSource>
