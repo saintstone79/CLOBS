@@ -22,9 +22,9 @@ namespace CLOBS2
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SampledObservationSummaryPage : Page
+    public sealed partial class ObservationSummaryPage : Page
     {
-        public SampledObservationSummaryPage()
+        public ObservationSummaryPage()
         {
             this.InitializeComponent();
         }
@@ -32,21 +32,20 @@ namespace CLOBS2
         private async void Exit_Click(object sender, RoutedEventArgs e)
         {
             ObservationManager.Instance.m_objInfoData.ObservationNote = ObservationNote.Text;
-            await ObservationManager.Instance.SaveSessionInfoWithStatistics();
-            await Windows.System.Launcher.LaunchFolderAsync(ApplicationData.Current.LocalFolder);
+            //await ObservationManager.Instance.SaveSessionInfoWithStatistics();
+            await Windows.System.Launcher.LaunchFolderAsync(ObservationManager.Instance.m_storageFolder);
             Application.Current.Exit();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-
+        {            
             ObservationManager objManager = ObservationManager.Instance;
 
             ObservationStarted.Text = objManager.m_dtInitTime.ToString("HH:mm:ss");
             ObservationEnded.Text = objManager.m_dtEndTime.ToString("HH:mm:ss");
             ObservationNote.Text = objManager.m_objInfoData.ObservationNote;
             ObservationLogLocation.Text = objManager.m_storageFile.Path;
-            ObservationNoteLocation.Text = objManager.m_storageNoteFile.Path;
+            //ObservationNoteLocation.Text = objManager.m_storageNoteFile.Path;
 
             TotalLogCount.Text = objManager.GetLogTotalLogCounts().ToString();
             TotalWholeClassCount.Text = objManager.GetClassStructureCount(CLOBSClassStructure.WholeClass).ToString();
@@ -99,7 +98,7 @@ namespace CLOBS2
             InterventionVideosBiosCt.Text = objManager.GetInterventionBioVideoCount().ToString();
             InterventionClassWorkExampleCt.Text = objManager.GetInterventionClassroomExcmpleCount().ToString();
             InterventionPersonalCt.Text = objManager.GetInterventionPersonal().ToString();
-
+            
             base.OnNavigatedTo(e);
         }
     }

@@ -8,29 +8,31 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <RelativePanel>
+        <StackPanel VerticalAlignment="Center" Margin="0, 10, 0, 0">
             <TextBlock Name="WaitCenterMessage" Text="Now Waiting for Next Observation" 
                        FontSize="36"                      
                        FontWeight="SemiBold"
                        RelativePanel.AlignHorizontalCenterWithPanel="True"
-                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
-            <StackPanel Name="WaitingTimePanel" RelativePanel.Below="WaitCenterMessage" RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch" >
+                       RelativePanel.AlignVerticalCenterWithPanel="True"
+                       HorizontalAlignment="Center"/>
+            <StackPanel Name="WaitingTimePanel" RelativePanel.Below="WaitCenterMessage" RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Stretch" >
                 <TextBlock Name="NextScreenMessage" Text="Next observation will start in"
                            FontSize="24" 
                            Margin="0, 0, 0, 0"/>
                 <TextBlock Name="GapTime" Text="00:00"
                            FontSize="24" Margin="5, 0, 0, 0" FontFamily="Segoe UI"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 20" RelativePanel.Below="WaitingTimePanel" RelativePanel.AlignHorizontalCenterWithPanel="True">
+            <Frame Name="LogUpdateFrame" Visibility="Collapsed" HorizontalAlignment="Center" />
+            <StackPanel Name="GapButtonPanel" Orientation="Horizontal" Margin="0, 10, 0, 10" HorizontalAlignment="Center">
                 <ToggleButton x:Name="btnShowNote" Width="200" Height="50"  Content="Record notes"
                         Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Bottom"
                         Click="btnShowNote_Click"/>
-                <Button x:Name="btnReturnLogSheet" Width="200" Height="50" Content="Return to observation sheet" Margin="20, 0, 0, 0"
+                <Button x:Name="btnReturnLogSheet" Width="200" Height="50" Content="Return to observation" Margin="20, 0, 0, 0"
                         Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" BorderBrush="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"
                         Click="btnReturnLogSheet_Click"/>
             </StackPanel>
             <TextBox Visibility="Collapsed" Name="GapTimeNote" Header="Observation Note" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
                      Height="150" TextWrapping="Wrap" MaxLength="640" AcceptsReturn="True" Margin="5, 0, 5, 30" Width="1000"/>
-        </RelativePanel>
+        </StackPanel>
     </Grid>
 </Page>

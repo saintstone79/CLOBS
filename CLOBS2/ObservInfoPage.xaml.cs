@@ -14,6 +14,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Globalization;
 using CLOBS2.Models;
+using Windows.ApplicationModel;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.AccessCache;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,6 +35,8 @@ namespace CLOBS2
             this.InitializeComponent();
             this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
             StomperNo.SelectedIndex = 1;
+            LogFolderLocation.Content = ApplicationData.Current.LocalFolder.Path;
+            VersionNo.Text = GetAppVersion();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -111,6 +117,7 @@ namespace CLOBS2
                 NoGapTime.IsEnabled = false;
                 Exit.Visibility = Visibility.Collapsed;
                 bStarted = true;
+                ChangeFolderLocation.IsEnabled = false;
             }
             this.Frame.Navigate(typeof(MainPage), objInfoData);
         }
@@ -148,6 +155,40 @@ namespace CLOBS2
         private void NoGapTime_Unchecked(object sender, RoutedEventArgs e)
         {         
             GapTime.IsEnabled = true;
+        }
+
+        public static string GetAppVersion()
+        {
+            Package package = Package.Current;
+            PackageId packageId = package.Id;
+            PackageVersion version = packageId.Version;
+
+            return string.Format("{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+        }
+
+        private async void ChangeFolderLocation_Click(object sender, RoutedEventArgs e)
+        {
+            FolderPicker folderPicker = new FolderPicker();
+            folderPicker.SuggestedStartLocation = PickerLocationId.Downloads;
+            folderPicker.FileTypeFilter.Add("*");
+            StorageFolder folder = await folderPicker.PickSingleFolderAsync();            
+            if (folder != null)
+            {
+                // Application now has read/write access to all contents in the picked folder (including other sub-folder contents)
+                StorageApplicationPermissions.FutureAccessList.AddOrReplace("PickedFolderToken", folder);
+                ObservationManager.Instance.m_storageFolder = folder;
+                LogFolderLocation.Content = folder.Path;
+            }
+            else
+            {
+                ErrorMessage.Text = "Operation cancelled. Please select correct log file location";                
+            }            
+        }
+
+        private async void LogFolderLocation_Click(object sender, RoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchFolderAsync(ObservationManager.Instance.m_storageFolder);
+            //await Windows.System.Launcher.LaunchFolderPathAsync(LogFolderLocation.Content, FolderLauncherOptions.Equals);
         }
     }
 }

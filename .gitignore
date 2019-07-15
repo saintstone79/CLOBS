@@ -1,0 +1,14 @@
+# Ignore folder named AppPackages
+AppPackages/
+
+# Ignore folder named bin
+bin/
+
+# Ignore folder named BundleArtifacts
+BundleArtifacts/
+
+# Ignore folder named obj
+obj/
+
+# Ignore file extensions
+*.pfx

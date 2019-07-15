@@ -20,14 +20,14 @@ namespace CLOBS2
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SampledObservationItemsPage : Page
+    public sealed partial class ObservationItemsPage : Page
     {
         private DispatcherTimer m_observationlogTimer;
         private DispatcherTimer m_observationLogTimeTick;
         private DateTime m_dtLogStarted;
         private bool m_bGapTimeLog = false;
 
-        public SampledObservationItemsPage()
+        public ObservationItemsPage()
         {
             this.InitializeComponent();
             this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
@@ -56,8 +56,7 @@ namespace CLOBS2
             ST1Activity.IsChecked = false;
             ST1HandsOn.IsChecked = false;
             ST1ClassroomManagement.IsChecked = false;
-            ST1WalkAround.IsChecked = false;
-            ST1WalkAround.IsEnabled = false;
+            ST1WalkAround.IsChecked = false;            
             ST1UnObservable.IsChecked = false;
 
             if (Stomper2Panel.Visibility == Visibility.Visible)
@@ -69,8 +68,7 @@ namespace CLOBS2
                 ST2Activity.IsChecked = false;
                 ST2HandsOn.IsChecked = false;
                 ST2ClassroomManagement.IsChecked = false;
-                ST2WalkAround.IsChecked = false;
-                ST2WalkAround.IsEnabled = false;
+                ST2WalkAround.IsChecked = false;                
                 ST2UnObservable.IsChecked = false;
             }
             if (Stomper3Panel.Visibility == Visibility.Visible)
@@ -82,8 +80,7 @@ namespace CLOBS2
                 ST3Activity.IsChecked = false;
                 ST3HandsOn.IsChecked = false;
                 ST3ClassroomManagement.IsChecked = false;
-                ST3WalkAround.IsChecked = false;
-                ST3WalkAround.IsEnabled = false;
+                ST3WalkAround.IsChecked = false;                
                 ST3UnObservable.IsChecked = false;
             }
 
@@ -158,7 +155,7 @@ namespace CLOBS2
 
             // if current observation log is additional log returned from gap time by user
             if (m_bGapTimeLog == true || ObservationManager.Instance.m_objInfoData.NoGapTime == true)
-                this.Frame.Navigate(typeof(SampledObservationItemsPage));
+                this.Frame.Navigate(typeof(ObservationItemsPage));
             else
                 this.Frame.Navigate(typeof(GapTimePage));
         }
@@ -276,135 +273,8 @@ namespace CLOBS2
             newLog.TeacherStepsIn = TeacherStepsIn;
             newLog.LogNote = strLogNote;
             ObservationManager.Instance.m_lsObLogData.Add(newLog);
-            ObservationManager.Instance.AppendNewLogToFile(newLog);
-        }
-
-        private void ST1AudienceWhole_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST1AudienceWhole.IsChecked.Value)
-            {
-                ST1DisciplinarySTEM.IsEnabled = true;
-                ST1Activity.IsEnabled = true;
-                ST1HandsOn.IsEnabled = true;
-                ST1ClassroomManagement.IsEnabled = true;
-            }
-        }
-
-        private void ST1AudienceIndividual_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST1AudienceIndividual.IsChecked.Value)
-            {
-                ST1DisciplinarySTEM.IsEnabled = true;
-                ST1Activity.IsEnabled = true;
-                ST1HandsOn.IsEnabled = true;
-                ST1ClassroomManagement.IsEnabled = true;
-            }
-        }
-
-        private void ST1AudienceNone_Checked(object sender, RoutedEventArgs e)
-        {            
-            ST1WalkAround.IsEnabled = true;         
-        }
-
-        private void ST1AudienceNone_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ST1WalkAround.IsEnabled = false;
-        }
-
-        private void ST2AudienceWhole_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST2AudienceWhole.IsChecked.Value)
-            {
-                ST2DisciplinarySTEM.IsEnabled = true;
-                ST2Activity.IsEnabled = true;
-                ST2HandsOn.IsEnabled = true;
-                ST2ClassroomManagement.IsEnabled = true;
-            }
-        }
-
-        private void ST2AudienceIndividual_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST1AudienceIndividual.IsChecked.Value)
-            {
-                ST1DisciplinarySTEM.IsEnabled = true;
-                ST1Activity.IsEnabled = true;
-                ST1HandsOn.IsEnabled = true;
-                ST1ClassroomManagement.IsEnabled = true;
-            }
-        }
-
-        private void ST2AudienceNone_Checked(object sender, RoutedEventArgs e)
-        {         
-            ST2WalkAround.IsEnabled = true;         
-        }
-
-
-        private void ST2AudienceNone_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ST2WalkAround.IsEnabled = false;
-        }
-
-        private void ST3AudienceWhole_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST3AudienceWhole.IsChecked.Value)
-            {
-                ST3DisciplinarySTEM.IsEnabled = true;
-                ST3Activity.IsEnabled = true;
-                ST3HandsOn.IsEnabled = true;
-                ST3ClassroomManagement.IsEnabled = true;
-            }
-        }
-
-        private void ST3AudienceIndividual_Checked(object sender, RoutedEventArgs e)
-        {
-            if (ST2AudienceIndividual.IsChecked.Value)
-            {
-                ST2DisciplinarySTEM.IsEnabled = true;
-                ST2Activity.IsEnabled = true;
-                ST2HandsOn.IsEnabled = true;
-                ST2ClassroomManagement.IsEnabled = true;
-            }
+            ObservationManager.Instance.WriteLogsToFile();
+            //ObservationManager.Instance.AppendNewLogToFile(newLog);
         }        
-
-        private void ST1AudienceWhole_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ST1AudienceIndividual_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }        
-
-        private void ST2AudienceWhole_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ST2AudienceIndividual_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void ST3AudienceWhole_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ST3AudienceIndividual_Unchecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ST3AudienceNone_Checked(object sender, RoutedEventArgs e)
-        {
-            ST3WalkAround.IsEnabled = true;
-        }
-
-        private void ST3AudienceNone_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ST3WalkAround.IsEnabled = false;
-        }
     }
 }

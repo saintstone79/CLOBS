@@ -11,7 +11,7 @@
     <Grid Background="White" HorizontalAlignment="Center">
         <StackPanel Margin="0, 5, 0, 0">
             <TextBlock x:Name="TOP_TITLE"  Text="Enter observation information"
-                   FontSize="24" Margin="0,26,0,8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                   FontSize="24" Margin="0,5,0,8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <StackPanel x:Name="DATE_TIME" Orientation="Horizontal" RelativePanel.Below="TOP_TITLE">
                 <DatePicker x:Name="ObservationDate" Header="OBSERVATION DATE" RelativePanel.Below="TOP_TITLE" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <TextBox x:Name="VideoSync" Text="00:00:00" TextAlignment="Right" Header= "VIDEO SYNC (Enter Video start time)" Margin="10,0,0,0" MaxLength="50" Width="300" HorizontalAlignment="Left" InputScope="TimeMinutesOrSeconds"/>
@@ -55,6 +55,13 @@
                 </StackPanel>
             </StackPanel>
             <TextBox x:Name="ObservationNote" Header="OBSERVATION NOTE" Margin="0,12,0,0" MaxLength="320" Width="Auto" Height="100" RelativePanel.Below="STOMPERInfo" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <RelativePanel Margin="0,5,0,0">
+                <TextBlock x:Name="txtLogLocation" Text="Log folder: " RelativePanel.AlignLeftWithPanel="True" FontSize="12" Margin="0,6,0,0"/>
+                <Button x:Name="LogFolderLocation" Content="[FOLDER_PATH]" RelativePanel.RightOf="txtLogLocation" FontSize="12" Margin="0,0,0,0" Click="LogFolderLocation_Click"
+                        Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}"/>
+                <Button x:Name="ChangeFolderLocation" Content="Change log folder" RelativePanel.AlignRightWithPanel="True" Click="ChangeFolderLocation_Click"
+                        Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" BorderBrush="Gray"/>
+            </RelativePanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Name="Start" Click="Start_Click" HorizontalAlignment="Center" Margin="0, 12, 0, 0" Foreground="{ThemeResource AppBarItemForegroundThemeBrush}" Background="{ThemeResource AppBarItemPressedForegroundThemeBrush}" >
                     <StackPanel Orientation="Horizontal">
@@ -70,6 +77,10 @@
                 </Button>
             </StackPanel>
             <TextBlock x:Name="ErrorMessage" Text="" Foreground="#FFFD0A0A" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Version: " Margin="0,5,0,0"/>
+                <TextBlock x:Name="VersionNo" Text="1.x.x.x" Margin="5,5,5,0" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

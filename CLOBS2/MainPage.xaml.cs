@@ -53,7 +53,7 @@ namespace CLOBS2
             m_sessionTick.Interval = new TimeSpan(0, 0, 0, 0, 100);
             dtStartTime = DateTime.Now;
             m_sessionTick.Start();
-            ObservationItemFrame.Navigate(typeof(SampledObservationItemsPage));
+            ObservationItemFrame.Navigate(typeof(ObservationItemsPage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -75,9 +75,9 @@ namespace CLOBS2
                 else
                 {
                     ObservationManager.Instance.UpdateObservationInfo(objInfoData);
-                    if (ObservationItemFrame.Content is SampledObservationItemsPage)
+                    if (ObservationItemFrame.Content is ObservationItemsPage)
                     {
-                        var childPage = (SampledObservationItemsPage)ObservationItemFrame.Content;
+                        var childPage = (ObservationItemsPage)ObservationItemFrame.Content;
                         childPage.UpdateSTOMPERInfo(objInfoData.StomperNumber, objInfoData.Stomper1, objInfoData.Stomper2, objInfoData.Stomper3);
                     }
                 }
@@ -113,14 +113,14 @@ namespace CLOBS2
                     var childPage = (GapTimePage)ObservationItemFrame.Content;
                     childPage.FlushObservationItemData();
                     ObservationManager.Instance.m_dtEndTime = DateTime.Now;
-                    this.Frame.Navigate(typeof(SampledObservationSummaryPage));
+                    this.Frame.Navigate(typeof(ObservationSummaryPage));
                 }
                 else
                 {
-                    var childPage = (SampledObservationItemsPage)ObservationItemFrame.Content;
+                    var childPage = (ObservationItemsPage)ObservationItemFrame.Content;
                     childPage.FlushObservationItemData();                    
                     ObservationManager.Instance.m_dtEndTime = DateTime.Now;
-                    this.Frame.Navigate(typeof(SampledObservationSummaryPage));
+                    this.Frame.Navigate(typeof(ObservationSummaryPage));
                 }
             }
             else if (command == noCommand)

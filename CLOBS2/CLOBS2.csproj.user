@@ -4,15 +4,16 @@
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
-    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
-    <Source>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</Source>
-    <SmallTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</SmallTileSource>
-    <MediumTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</MediumTileSource>
-    <WideTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</WideTileSource>
-    <LargeTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</LargeTileSource>
-    <AppIconSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</AppIconSource>
-    <SplashScreenSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</SplashScreenSource>
-    <PackageLogoSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\logo image by ppt.jpg</PackageLogoSource>
+    <PackageOptionalProjectsInIdeBuilds>True</PackageOptionalProjectsInIdeBuilds>
+    <Source>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</Source>
+    <SmallTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</SmallTileSource>
+    <MediumTileSource>C:\Users\Euisuk\Source\Repos\Github\CLOBS\CLOBS2\Resources\Medium logo.ai</MediumTileSource>
+    <WideTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</WideTileSource>
+    <LargeTileSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</LargeTileSource>
+    <AppIconSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</AppIconSource>
+    <SplashScreenSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\CLOBS-Splash.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</PackageLogoSource>
+    <BadgeLogoSource>C:\Users\Euisuk\Source\Repos\CLOBS2\CLOBS2\Resources\Converted-Ai.ai</BadgeLogoSource>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
